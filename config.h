@@ -25,11 +25,16 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const char col_purple[]      = "#971fe1";
 static const char col_black[]       = "#000000";
+static const char col_white[]       = "#ffffff";
 static const char col_salmon[]      = "#fa8072";
 static const char sky_blue[]        = "#87ceeb";
-static const char neon_blue[]	    = "#15f4ee";
-static const char cat_black[]	    = "#131020";
-static const char col_sand[]	    = "#fae6cb"; 
+static const char neon_blue[]	      = "#15f4ee";
+static const char cat_black[]	      = "#161320";
+static const char col_sand[]	      = "#fae6cb";
+static const char rose_pine[]       = "#ebbcba";
+static const char rose_gray[]       = "#2a273f";
+static const char col_griffith[]    = "#ccbab8";
+static const char col_eva[]         = "#dfdedf";
 /*Chuclados*/
 static const char norm_fg[] = "#F7CAC9";
 static const char norm_bg[] = "#2B2E37";
@@ -41,8 +46,8 @@ static const char sel_border[] = "#F7CAC9";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_black, col_sand, col_black },
-	[SchemeSel]  = { col_black, col_sand,  col_sand  },
+	[SchemeNorm] = { rose_pine, rose_gray, col_black },
+	[SchemeSel]  = { rose_pine, rose_gray, rose_pine },
 };
 
 /* tagging */

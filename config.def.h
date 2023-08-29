@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
-static const unsigned int gappx     = 50;        /* gaps between windows*/
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int gappx     = 35;        /* gaps between windows*/
 static const int user_bh            = 28;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const unsigned int snap      = 32;	 /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selec >0: p>*/
@@ -27,7 +27,9 @@ static const char col_purple[]      = "#971fe1";
 static const char col_black[]       = "#000000";
 static const char col_salmon[]      = "#fa8072";
 static const char sky_blue[]        = "#87ceeb";
-
+static const char neon_blue[]	    = "#15f4ee";
+static const char cat_black[]	    = "#131020";
+static const char col_sand[]	    = "#fae6cb"; 
 /*Chuclados*/
 static const char norm_fg[] = "#F7CAC9";
 static const char norm_bg[] = "#2B2E37";
@@ -39,12 +41,12 @@ static const char sel_border[] = "#F7CAC9";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { norm_fg, norm_bg, norm_border },
-	[SchemeSel]  = { sel_fg, sel_bg,  sel_border  },
+	[SchemeNorm] = { col_black, col_sand, col_black },
+	[SchemeSel]  = { col_black, col_sand,  col_sand  },
 };
 
 /* tagging */
-static const char *tags[] = { "一", "二", "三", "四", "五", "六"};
+static const char *tags[] = { "一", "二", "三", "四", "五"};
 static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
 static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
@@ -57,7 +59,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 }
 };
 
 /* layout(s) */
@@ -151,3 +153,4 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+
