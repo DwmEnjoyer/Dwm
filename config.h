@@ -98,12 +98,21 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *powermenucmd[] = { "powermenu.sh", NULL };
 static const char *launcher[] = { "launcher.sh", NULL};
 static const char *tray[] = { "stalonetray", NULL };
+static const char *volumeup[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@", "+2%", NULL};
+static const char *volumedown[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@", "-2%", NULL};
+static const char *toggle[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL};
+
 #include "shiftview.c"
+#include <X11/XF86keysym.h> 
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = launcher } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_a,	   spawn,          {.v = powermenucmd } },
+	{ MODKEY,                       XK_a,	     spawn,          {.v = powermenucmd } },
+	{ 0,        XF86XK_AudioRaiseVolume,        spawn,         { .v = volumeup } },
+  { 0,        XF86XK_AudioLowerVolume,        spawn,         { .v = volumedown }},
+  { 0,               XF86XK_AudioMute,        spawn,         { .v = toggle }},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
