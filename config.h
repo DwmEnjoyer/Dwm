@@ -34,7 +34,8 @@ static const char col_sand[]	      = "#fae6cb";
 static const char rose_pine[]       = "#ebbcba";
 static const char rose_gray[]       = "#2a273f";
 static const char col_griffith[]    = "#ccbab8";
-static const char col_eva[]         = "#dfdedf";
+static const char col_eva[]         = "#e5dfbb";
+static const char col_eva_grey[]		= "#dfdedf";
 /*Chuclados*/
 static const char norm_fg[] = "#F7CAC9";
 static const char norm_bg[] = "#2B2E37";
@@ -46,8 +47,8 @@ static const char sel_border[] = "#F7CAC9";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { rose_pine, rose_gray, col_black },
-	[SchemeSel]  = { rose_pine, rose_gray, rose_pine },
+	[SchemeNorm] = { col_black, col_eva, col_black },
+	[SchemeSel]  = { col_black, col_eva, col_white },
 };
 
 /* tagging */
@@ -75,9 +76,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[Tile]",      tile },    /* first entry is default */
-	{ "[Float]",      NULL },    /* no layout function means floating behavior */
-	{ "[Full]",      monocle },
+	{ "",      tile },    /* first entry is default */
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "",      monocle },
 };
 
 /* key definitions */
